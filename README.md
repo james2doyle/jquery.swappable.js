@@ -1,51 +1,58 @@
-nudeproject
-===========
+jquery.swappable.js
+===================
 
-A starting point for new web projects, meant for building simple sites or landing pages.
+a jQuery plugin to turn an element into an input when you click on it.
 
-![NudeProject Logo](https://raw.github.com/james2doyle/nudeproject/master/nudeproject.png)
+### Basic Usage
 
-### grunt
+The HTML
 
-included grunt taks
+```html
+<p>click to edit me</p>
+```
 
-* imagemin -- compress images
-* uglify -- compress js
-* cssmin -- compress css
-* concat -- combine files
-* sass -- libsass task
-* watch -- livereload
-* autoprefixer -- no more prefixes
+Now the JS
 
-### stylesheets
+```javascript
+$('p').swappable();
+```
 
-* normalize.css
-* grid.scss -- simple grid
-* mixins.scss -- simple mixins
-* basic styles for font normalization
+### Advanced Usage
 
-### javascript
+```html
+<p data-swap-type="textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```
 
-modernizr custom build
+```javascript
+$('p').swappable({
+  swapStart: function() {
+    console.log('it begins');
+  },
+  swapChange: function() {
+    console.log($(this).val());
+  },
+  swapEnd: function(val) {
+    $(this).addClass('edited');
+    console.log('ajax save?');
+  }
+});
+```
 
-* multiplebgs
-* cssanimations
-* csscolumns
-* cssgradients
-* csstransforms
-* csstransforms3d
-* localstorage
-* websockets
-* webworkers
-* touch
-* shiv
-* cssclasses
-* teststyles
-* testprop
-* testallprops
-* prefixes
-* domprefixes
-* css_calc
-* css_filters
-* script_async
-* script_defer
+### Methods and Options
+
+```javascript
+this.defaults = {
+  id: 'swappable-temp-input', // the id of the input that is injected
+  class: 'swappable-input', // the class of the injected input
+  name: 'swappable-temp', // the name of the injected input
+  evt: 'click', // starting trigger event
+  end: 'blur', // ending trigger event
+  saveChanges: true, // swap with input text?
+  changeEvent: 'input', // change listener (might be 'keyup')
+  swapStart: function() {},
+  swapChange: function() {}, // on changeEvent
+  swapEnd: function(inputValue) {} // when we are done
+}
+```
+
+
