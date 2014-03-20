@@ -3,6 +3,8 @@ jquery.swappable.js
 
 a jQuery plugin to turn an element into an input when you click on it.
 
+![input example](https://raw.githubusercontent.com/james2doyle/jquery.swappable.js/master/input.gif)
+
 ### Basic Usage
 
 The HTML
