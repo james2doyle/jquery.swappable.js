@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie7"><![endif]-->
-<!--[if IE 7]><html class="no-js ie7 lt-ie8"><![endif]-->
-<!--[if IE 8]><html class="no-js ie8 lt-ie9"><![endif]-->
-<!--[if IE 9]><html class="no-js ie9 lt-ie10"><![endif]-->
-<html class="no-js not-ie">
+<html>
 <head>
   <meta charset="utf-8" />
   <title>jquery.swappable.js</title>
@@ -13,20 +9,46 @@
 <body>
   <div class="container">
     <div class="grid">
-      <div class="center"><h2>jquery.swappable.js</h2></div>
+      <div class="center">
+        <h2>jquery.swappable.js</h2>
+      </div>
       <div class="col-1-2">
         <h4>What does this do?</h4>
+        <p>It turns an element into an input. Usually reserved for little paragraphs or editing fields and having a "onblur save". Pretty cool.</p>
       </div>
       <div class="col-1-2">
         <h4>Why is that cool?</h4>
+        <p>Well it makes it simple to add a "click-to-edit" feature. This is more of a case for fun UX than solving an actual problem.</p>
       </div>
       <hr>
     </div>
     <div class="grid examples">
       <h3>Examples</h3>
-      <div class="col-1-1">
-      <p class="keepthis">Click To Edit Me!</p>
-      <p data-swap-type="textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="col-1-2">
+        <p>With "Save"</p>
+        <p class="with-save keepthis">Click To Edit Me!</p>
+        <p class="with-save" data-swap-type="textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="col-1-2">
+        <p>Without "Save"</p>
+        <p class="without-save keepthis">Click To Edit Me!</p>
+        <p class="without-save" data-swap-type="textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-1-2">
+        <h4>Who made this?!</h4>
+        <p>I did. You can find me at these fine locations.</p>
+        <ul>
+          <li><a target="_blank" href="https://twitter.com/james2doyle">Twitter @james2doyle</a></li>
+          <li><a target="_blank" href="https://github.com/james2doyle">Github @james2doyle</a></li>
+          <li><a target="_blank" href="http://warpaintmedia.com/">WARPAINT Media</a></li>
+        </ul>
+      </div>
+      <div class="col-1-2">
+        <h4>Source, Issues, Supported Browsers</h4>
+        <p>If you find an issue, or want to see the source, check out the github page.</p>
+        <a href="http://james2doyle.github.io/jquery.swappable.js/" title="jQuery.swappable.js Github Page">jQuery.swappable.js On Github</a>
       </div>
     </div>
   </div>

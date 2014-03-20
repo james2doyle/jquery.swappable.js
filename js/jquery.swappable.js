@@ -18,16 +18,16 @@
       function makeTemplate() {
         // textareas are special
         if (settings.type === 'textarea') {
-          return '<textarea class="' + settings.class + '" name="' + settings.name + '" id="' + settings.id + '">' + settings.text + '</textarea>';
+          return '<textarea class="' + settings.class + '" name="' + settings.name + '" id="' + settings.id + '">' + decodeURI(settings.text) + '</textarea>';
         } else {
           // something is messed. let there be inputs
-          return '<input type="text" class="' + settings.class + '" name="' + settings.name + '" id="' + settings.id + '" value="' + settings.text + '">';
+          return '<input type="text" class="' + settings.class + '" name="' + settings.name + '" id="' + settings.id + '" value="' + decodeURI(settings.text) + '">';
         }
       }
 
       function handleSwap() {
         // are we just using this for a text copy scenario?
-        var val = (!settings.saveChanges) ? settings.temp: $(this).val();
+        var val = (!settings.saveChanges) ? decodeURI(settings.text): $(this).val();
         // convert our saved element to a real element
         var $p = $(settings.temp);
         // swap the inner text with the new one is applicable
@@ -47,7 +47,7 @@
         // save this entire element as a string
         settings.temp = this.outerHTML;
         // save the innards
-        settings.text = $this.text();
+        settings.text = encodeURI($this.text());
         // get the swap element if its there
         settings.type = $this.attr('data-swap-type');
         // replace with our template

@@ -368,6 +368,9 @@ hr {
     max-width: 100%;
     height: auto; }
 
+a {
+  color: #c93742; }
+
 p {
   margin: 1em 0; }
 
@@ -376,11 +379,11 @@ input, textarea {
   outline: none;
   border: none;
   font-size: 16px;
-  margin: 0.68em 0;
+  margin: 0;
   padding: 0;
   line-height: 1;
   position: relative;
-  top: 0.5em;
+  top: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -393,8 +396,13 @@ textarea {
   width: 100%;
   line-height: 1.5;
   margin: 0;
-  top: 0;
   resize: none; }
 
 .examples {
   padding-bottom: 2em; }
+
+.examples p.with-save, .examples p.without-save {
+  color: #acc23a; }
+
+.examples p.edited {
+  color: #b581cf; }
